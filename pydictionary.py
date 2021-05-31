@@ -1,8 +1,11 @@
 import json
 from difflib import SequenceMatcher
 from difflib import get_close_matches
+
+# accessing the data.json file
 data = json.load(open("076 data.json"))
 
+# function to check if entered word is present in the 076_data.json file and print neccessary output
 def translate(w):
     if w in data:
         return data[w]
@@ -18,7 +21,7 @@ def translate(w):
         elif answer == "n" or answer == "no":
             return "TRY ANOTHER WORD:"
         else:
-            return "WE didn't Understand what you wanted Type y for yes and n for no: "
+            return "We didn't Understand what you wanted Type y for yes and n for no: "
     else:
         print ("THE WORD DOESNT EXIST in the data.json database!!!!! ")
 
